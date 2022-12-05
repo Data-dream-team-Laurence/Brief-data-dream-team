@@ -1,2 +1,2 @@
 Brief du 05/12 au 16/12
-Groupe : Laurence, Louis, Rémi, Mehdi, Brice, Elida
+Groupe : Laurence, Louis, Rémi, Mehdi, Elida, Brice
