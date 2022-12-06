@@ -1,62 +1,47 @@
-# import os
-# import sqlite3
-# from sqlite3 import Error
-# from sqlite3 import Connection
-
-
-# def create_connection(db_file):    
-#     """ create a database connection to the SQLite database
-#         specified by db_file
-#     :param db_file: database file
-#     :return: Connection object or None
-#     """
-#     conn = None
-#     try:
-#         conn = sqlite3.connect(db_file)
-#         print("connexion établie")
-#         return conn
-#     except Error as e:
-#         print(e)
-
-#     return conn
-
-# #the name of the database
-# db_name : str = 'marketplaces.db'      
-# database = r"../db_name"
-
-# # create a database connection
-# conn  = create_connection(database)
- 
-# # create tables
-# if conn != None :
-#     with open('orders_sqlite.sql') as f:
-#         conn.executescript(f.read())
-#         cur = conn.cursor()
-
-
-
-# # if conn is not None:
-# #     cur.execute('''PRAGMA foreign_keys = ON;''')
-# #     # create exchange table
-# #     cur.execute(sql_create_exchange_table)         
-# #     # create company table
-# #     cur.execute(sql_create_company_table)             
-# #     # create security table
-# #     cur.execute(sql_create_security_table)            
-# #     # create security_price table
-# #     cur.execute(sql_create_security_price_table) 
-
-
-# if conn != None :
-#     conn.close()
-
 import sqlite3
+import pandas as pd
+from sqlite3 import Error
 
+def create_connection(db_file):    
+    """ create a database connection to the SQLite database
+        specified by db_file
+    :param db_file: database file
+    :return: Connection object or None
+    """
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        print("connexion établie")
+        return conn
+    except Error as e:
+        print(e)
+
+    return conn
+
+customers_table = pd.read_csv(r'data/olist_customers_dataset.csv')
+geolocation_table = pd.read_csv(r'data/olist_geolocation_dataset.csv')
+items_table = pd.read_csv(r'data/olist_order_items_dataset.csv')
+payments_table = pd.read_csv(r'data/olist_order_payments_dataset.csv')
+reviews_table = pd.read_csv(r'data/olist_order_reviews_dataset.csv')
+orders_table = pd.read_csv(r'data/olist_orders_dataset.csv')
+products_table = pd.read_csv(r'data/olist_products_dataset.csv')
+sellers_table = pd.read_csv(r'data/olist_sellers_dataset.csv')
+
+#Create tables with sql file
 with open('orders.sql', 'r') as sql_file:
     sql_script = sql_file.read()
 
-db = sqlite3.connect('database.db')
-cursor = db.cursor()
-cursor.executescript(sql_script)
-db.commit()
-db.close()
+#Insert csv values in tables
+conn = sqlite3.connect('data/marketplaces.db')
+cur = conn.cursor()
+cur.executescript(sql_script)
+customers_table.to_sql("Customers", conn, if_exists="append", index=False)
+geolocation_table.to_sql("Geolocation", conn, if_exists="append", index=True, index_label='id_geolocation')
+items_table.to_sql("Items", conn, if_exists="append", index=False, index_label='id_items')
+payments_table.to_sql("Payments", conn, if_exists="append", index=False, index_label='id_payments')
+reviews_table.to_sql("Reviews", conn, if_exists="append", index=False, index_label='review_unique_id')
+orders_table.to_sql("Orders", conn, if_exists="append", index=False)
+products_table.to_sql("Products", conn, if_exists="append", index=False)
+sellers_table.to_sql("Sellers", conn, if_exists="append", index=False)
+conn.commit()
+conn.close()
