@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+nav {
+    background: #23aad1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+nav a {
+    color: #222;
+    font-size: 1.4rem;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: white
+}
+
+footer {
+    background: #23aad1;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/*============= PREDICTIONS ==========================*/
+.prediction {
+    height: 100%;
+    background-color: #5ccfeecd;
+}
+
+
+/*============== DATA TEAM ====================== */
+
+.about {
+    height: 100%;
+    width: 100%;
+    color: white;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 20s ease-in-out infinite;
+}
+
+.title {
+    color: black;
+    font-size: clamp(2em, 5em, 8vw);
+    text-align: center;
+    padding: 55px 30px 0 30px
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 25px;
+    /* Correction décalage */
+    margin-right: 70px;
+    margin-bottom: 100px;
+}
+
+.about .container .box {
+    position: relative;
+    height: 400px;
+    width: 300px;
+    padding: 80px 40px;
+    margin-bottom: 70px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.about .container .box img {
+    position: absolute;
+    backface-visibility: hidden;
+    transition: 1.2s;
+    border: 6px solid #E73C7E;
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
+}
+
+.about .container .box p {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: black;
+    position: relative;
+    right: -10px;
+    bottom: -10px;
+}
+
+.about .container .box img:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+.about .container .box:hover img:nth-child(2) {
+    transform: rotateY(0deg);
+}
+
+.about .container .box:hover img:nth-child(1) {
+    transform: rotateY(-180deg);
+}
+
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

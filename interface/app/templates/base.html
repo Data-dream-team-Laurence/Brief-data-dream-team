@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='styles.css' ) }}>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href={{ url_for('index') }}>Predictions</a>
+            <a href={{ url_for('about') }}>La Data Dream Team</a>
+        </nav>
+    </header>
+    <section>
+        {% block content%} {%endblock%}
+    </section>
+    <footer>
+        © Tous droits réservés - Cosmo Devs - Ecole IA by Simplon
+    </footer>
+</body>
+
+</html>

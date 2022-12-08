@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="about">
+    <h2 class="title">LA DATA DREAM TEAM</h2>
+    <div class="container">
+
+        <div class="box">
+            <img src={{ url_for('static', filename='img/louis.png' ) }} alt="">
+            <img src={{ url_for('static', filename='img/brice.png' ) }} alt="">
+            <p> Louis Delassise</p>
+            <p> Brice Mulot</p>
+        </div>
+        <div class="box">
+            <img src={{ url_for('static', filename='img/medhi.png' ) }} alt="">
+            <img src={{ url_for('static', filename='img/elida.png' ) }} alt="">
+            <p> Mehdi Reggad</p>
+            <p> Elida</p>
+        </div>
+        <div class="box">
+            <img src={{ url_for('static', filename='img/laurence.png' ) }} alt="">
+            <img src={{ url_for('static', filename='img/remi.png' ) }} alt="">
+            <p> Laulau</p>
+            <p> Rémi Prince </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
