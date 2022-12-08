@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS "Geolocations" (
 );
 
 CREATE TABLE IF NOT EXISTS "Items" (
+
   "id_items" INTEGER PRIMARY KEY AUTOINCREMENT,
   "order_id" VARCHAR(50),
   "order_item_id" INTEGER,
@@ -34,6 +35,7 @@ CREATE TABLE IF NOT EXISTS "Items" (
   "shipping_limit_date" DATETIME,
   "price" float,
   "freight_value" float
+
 );
 
 CREATE TABLE IF NOT EXISTS "Orders" (
@@ -67,6 +69,7 @@ CREATE TABLE IF NOT EXISTS "Products" (
   "product_length_cm" float,
   "product_height_cm" float,
   "product_width_cm" float,
+
   PRIMARY KEY ("product_id")
 );
 
