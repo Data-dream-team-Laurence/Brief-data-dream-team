@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3 {
+    color: black;
+    font-size: clamp(2em, 5em, 8vw);
+    text-align: center;
+    padding: 55px 30px 0 30px
+}
+
+
+.algo-choice {
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+
+
+#demo-dropdown {
+    width: 300px;
+    padding-bottom: 50px;
+    margin-right: 60px;
+
+}
+
+
+#title-container {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+
+#dd-output-container,
+#top10-output-container {
+
+    max-width: 1200px;
+    padding: 2px 30px;
+    border: 2px solid #99f;
+    box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.25);
+}
+
+#top10-output-container {
+    margin-top: 50px;
+}
+
+
+footer {
+    font-size: 1.7rem;
+    margin-top: 60px;
+    margin-bottom: 35px;
+
+}
