@@ -3,7 +3,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score, median_absolute_error
 from sklearn import metrics
 
-
+#todo
 
 def calculate_accuracy(classifier, X_train, X_test, y_train, y_test):
     classifier.fit(X_train, y_train)
