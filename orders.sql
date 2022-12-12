@@ -17,13 +17,12 @@ CREATE TABLE IF NOT EXISTS "Customers" (
 );
 
 CREATE TABLE IF NOT EXISTS "Geolocations" (
-  "id_geolocation" VARCHAR(50),
+  "id_geolocation" INTEGER PRIMARY KEY AUTOINCREMENT,
   "geolocation_zip_code_prefix" INTEGER(50),
   "geolocation_lat" float,
   "geolocation_lng" float,
   "geolocation_city" VARCHAR(50),
-  "geolocation_state" VARCHAR(50),
-  PRIMARY KEY ("id_geolocation")
+  "geolocation_state" VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS "Items" (
