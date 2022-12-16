@@ -1,6 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="travaux">
-
+<div class="works">
+    <h2 class="title">Nos travaux de clusterisation</h2>
+    <div class="works-container">
+        <div class="card-container">
+            <p class="card-title">Distribution recency</p>
+            <img src={{ url_for('static', filename='img/graph1.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title">Distribution de la frequence</p>
+            <img src={{ url_for('static', filename='img/graph2.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title">Distribution des montants</p>
+            <img src={{ url_for('static', filename='img/graph3.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title">Courbe de selection du nombre de cluster</p>
+            <img src={{ url_for('static', filename='img/graph4.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title">Courbe de selection du nombre de cluster (RFM)</p>
+            <img src={{ url_for('static', filename='img/graph5.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title">Courbe de selection du nombre de cluster (RFM)</p>
+            <img src={{ url_for('static', filename='img/graph6.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title"> Graphiques representant les différents point en fonction de Recency Frequence et
+                montant et dont la couleure représente le groupe auquel il appartient</p>
+            <img src={{ url_for('static', filename='img/graph7.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title"> Graphique de DBSCAN</p>
+            <img src={{ url_for('static', filename='img/graph8.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title">TSNE Visualisation for different cluster models</p>
+            <img src={{ url_for('static', filename='img/graph9.png' ) }} alt="">
+        </div>
+        <div class="card-container">
+            <p class="card-title">Représentativité en fonction du nombre de dimensions choisies</p>
+            <img src={{ url_for('static', filename='img/graph10.png' ) }} alt="">
+        </div>
+    </div>
 </div>
 {% endblock %}

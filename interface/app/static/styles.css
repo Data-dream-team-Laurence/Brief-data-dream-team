@@ -46,11 +46,36 @@ footer {
     font-weight: 500;
 }
 
-/*============= TRAVAUX ==========================*/
+/*============= WORKS ==========================*/
 
-.travaux {
+.works {
     background: #28b9c6;
     height: 100%;
+}
+
+.works .works-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 30px 20px 30px 35px;
+}
+
+.card-container {
+    margin: 30px 35px;
+}
+
+.card-container p {
+    width: 100%;
+    background: #EE7752;
+    text-align: center;
+    white-space: pre-wrap;
+    padding: 5px 8px;
+}
+
+.card-container img {
+    border: 3px solid #EE7752;
 }
 
 
