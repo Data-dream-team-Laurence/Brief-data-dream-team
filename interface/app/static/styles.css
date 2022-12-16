@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Chewy&effect=neon|outline|emboss|shadow-multiple');
 
 *,
 ::after,
@@ -6,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Montserrat;
+    font-family: Chewy;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
 }
 
 nav {
+    font-family: Montserrat;
     background: #23aad1;
     padding: 20px;
     display: flex;
@@ -38,17 +40,19 @@ nav a:hover {
 
 footer {
     background: #23aad1;
-    padding: 15px;
+    padding: 22px;
     font-size: 20px;
     text-align: center;
     font-weight: 500;
 }
 
-/*============= PREDICTIONS ==========================*/
-.prediction {
+/*============= TRAVAUX ==========================*/
+
+.travaux {
+    background: #28b9c6;
     height: 100%;
-    background-color: #5ccfeecd;
 }
+
 
 
 /*============== DATA TEAM ====================== */
@@ -64,10 +68,13 @@ footer {
 }
 
 .title {
+    font-family: Alegreya SC;
     color: black;
     font-size: clamp(2em, 5em, 8vw);
     text-align: center;
-    padding: 55px 30px 0 30px
+    padding: 35px 30px 0 30px;
+    font-weight: 700;
+    color: #222;
 }
 
 .about .container {
@@ -77,15 +84,16 @@ footer {
     flex-wrap: wrap;
     padding: 0 25px;
     /* Correction décalage */
-    margin-right: 70px;
-    margin-bottom: 100px;
+    margin-right: 85px;
+
+
 }
 
 .about .container .box {
     position: relative;
     height: 400px;
     width: 300px;
-    padding: 80px 40px;
+    padding: 50px 40px;
     margin-bottom: 70px;
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -100,13 +108,22 @@ footer {
     box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
 }
 
+.about .container .box:hover img {
+    border: 6px solid silver;
+    box-shadow: 0px 0px 45px white;
+}
+
 .about .container .box p {
-    font-size: 1.2em;
+    font-family: Alegreya SC;
+    font-size: 1.7em;
     font-weight: 700;
-    color: black;
+    color: #222;
     position: relative;
     right: -10px;
     bottom: -10px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    text-decoration-color: #E73C7E;
 }
 
 .about .container .box img:nth-child(2) {
@@ -133,4 +150,85 @@ footer {
     100% {
         background-position: 0% 50%;
     }
+}
+
+/* ===================== DATA TEAM BUTTON ======================== */
+
+.btn-predict {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+
+.btn-predict a {
+    position: relative;
+    padding: 20px 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 40px;
+    transition: 1s;
+    overflow: hidden;
+    text-decoration: none;
+    width: min-content;
+    margin: 0 auto;
+}
+
+.btn-predict a:hover {
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 60px var(--clr), 0 0 100px var(--clr);
+}
+
+.btn-predict a::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 400%;
+    background: var(--clr);
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(0.33s * var(--i));
+}
+
+.btn-predict a:hover::before {
+    width: 120px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-predict a::after {
+    content: '';
+    position: absolute;
+    background: #222;
+    inset: 3px;
+    transition: 0.5s
+}
+
+.btn-predict a:hover::after {
+    background: var(--clr);
+}
+
+.btn-predict a span {
+    font-family: Alegreya SC;
+    position: relative;
+    z-index: 1;
+    font-size: clamp(1em, 1.5em, 3vw);
+    color: white;
+    opacity: 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.btn-predict a:hover span {
+    opacity: 1;
 }

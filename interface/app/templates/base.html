@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>La Data Dream Team</title>
     <link rel="stylesheet" href={{ url_for('static', filename='styles.css' ) }}>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/brazil.ico') }}">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="predictions/">Predictions</a>
-            <a href={{ url_for('about') }}>La Data Dream Team</a>
+            <a href={{ url_for('index') }}>La Data Dream Team</a>
+            <a href="travaux/">Travaux segmentation</a>
         </nav>
     </header>
     <section>

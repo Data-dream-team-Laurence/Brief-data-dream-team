@@ -10,9 +10,9 @@ def index():
    
    return render_template('index.html')
 
-@app.route('/about')
+@app.route('/travaux/')
 def about():
-   return render_template('about.html')
+   return render_template('travaux.html')
 
 
 
