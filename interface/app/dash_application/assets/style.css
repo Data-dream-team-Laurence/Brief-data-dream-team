@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(238, 238, 238);
+    background: radial-gradient(circle, rgba(238, 238, 238, 1) 0%, rgba(35, 166, 213, 1) 100%);
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+    text-align: center;
+}
+
+.choice {
+    padding-top: 23px;
+}
+
+.choice p,
+.features-checkboxes p {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 6px;
+    text-decoration: underline;
+    text-decoration-color: #E73C7E;
+}
+
+.dash-dropdown {
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+#features_checklist label {
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+#features_checklist input {
+    margin-right: 3px;
+    margin-left: 6px;
+}
+
+#features {
+    padding: 15px 0;
+}
+
+.input-fields p {
+    font-size: 1.2em;
+    padding-bottom: 3px;
+    padding-top: 6px;
+}
+
+#submit-val {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding: 5px;
+    max-width: 100px;
+    width: 100px;
+    height: 40px;
+    max-height: 40px;
+}
+
+
+#submit-val:hover {
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: initial;
+    border: transparent;
+    color: #E73C7E
+}
+
+.input-fields input {
+    padding: 2px;
+    width: 130px;
+    font-size: 1.1em;
+}
+
+.input-fields input:focus {
+    outline: 2px solid #E73C7E
+}
+
+#results {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#results p {
+    line-height: 2.5em;
+}
+
+#results p span {
+    color: #E73C7E;
+    font-weight: bolder
+}
+
+#price {
+    color: #E73C7E;
+    font-size: larger;
+    font-weight: bolder;
+}

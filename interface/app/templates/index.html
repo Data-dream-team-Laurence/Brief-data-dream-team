@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="about">
+    <h2 class="title">La Data Dream Team</h2>
+    <div class="container">
+
+        <div class="box">
+            <img src={{ url_for('static', filename='img/louis.png' ) }} alt="">
+            <img src={{ url_for('static', filename='img/brice.png' ) }} alt="">
+            <p> Louis</p>
+            <p> Brice </p>
+        </div>
+        <div class="box">
+            <img src={{ url_for('static', filename='img/medhi.png' ) }} alt="">
+            <img src={{ url_for('static', filename='img/elida.png' ) }} alt="">
+            <p> Mehdi</p>
+            <p> Elida</p>
+        </div>
+        <div class="box">
+            <img src={{ url_for('static', filename='img/laurence.png' ) }} alt="">
+            <img src={{ url_for('static', filename='img/remi.png' ) }} alt="">
+            <p> Laulau</p>
+            <p> Rémi</p>
+        </div>
+    </div>
+    <div class="btn-predict">
+        <a href="predictions/" target="_blank" style="--clr:#E73C7E; --i:0"><span>Voir nos prédictions</span></a>
+    </div>
+</div>
+{% endblock %}
