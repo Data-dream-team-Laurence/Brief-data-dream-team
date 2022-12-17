@@ -5,13 +5,11 @@ import os
 from .db import get_freight_data
 from .models import get_results_by_model
 
-
-
 y1, features1 = get_freight_data()
 
 
 def create_dash_application(flask_app):
-    assets_path = os.getcwd()+r"/interface/app/dash_application/assets/"
+    assets_path = os.getcwd() + r"/interface/app/dash_application/assets/"
     dash_app = Dash(server=flask_app, name="Dashboard", url_base_pathname="/predictions/", assets_folder=assets_path)
     dash_app.title = "Predictions"
     dash_app.layout = html.Div(className= 'main-container', children=[
@@ -93,9 +91,10 @@ def create_dash_application(flask_app):
     #return inputs fields according selected features
     @dash_app.callback(
         Output('input-fields','children'),
-        Input('features_checklist','value')
+        Input('features_checklist','value'),
+        Input('choice3','value')
     )
-    def get_input_fields(features):
+    def get_input_fields(features, target):
         return(
             html.P("Prix de l'objet"), 
             dcc.Input(id="input1", type="number", disabled='price' not in features),
@@ -111,7 +110,7 @@ def create_dash_application(flask_app):
             html.Br(),
             html.P("Largeur (cm)"),
             dcc.Input(id="input5", type="number", disabled='product_width_cm' not in features)
-        )       
+        ) if target == 'FRA' else None
 
     # return a prediction and metrics with user inputs
     @dash_app.callback(
@@ -142,14 +141,8 @@ def create_dash_application(flask_app):
         X.fillna(0, inplace=True) # a modifier plus tard
         prediction, mae, mse, rmse, r2 = get_results_by_model(model, X, y, X_to_predict)
 
-        print(prediction)
-        print(mae)
-        print(mse)
-        print(rmse)
-        print(r2)
-
         return html.Div(children=[
-            html.P(f"Prix estimé : {prediction[0]:.2f}"),            
+            html.P(f"Prix estimé : {prediction[0]:.2f} $", id="price"),            
             html.P(f"MAE : {mae:.2f}"),
             html.P(f"MSE : {mse:.2f}"),
             html.P(f"RMSE : {rmse:.2f}"),

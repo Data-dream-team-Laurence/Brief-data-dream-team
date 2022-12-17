@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
 
-
 *,
 ::after,
 ::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -15,8 +13,6 @@ body {
     background: radial-gradient(circle, rgba(238, 238, 238, 1) 0%, rgba(35, 166, 213, 1) 100%);
     font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
-
-#react-entry-point {}
 
 .main-container {
     text-align: center;
@@ -58,7 +54,6 @@ body {
     font-size: 1.2em;
     padding-bottom: 3px;
     padding-top: 6px;
-
 }
 
 #submit-val {
@@ -85,7 +80,6 @@ body {
     padding: 2px;
     width: 130px;
     font-size: 1.1em;
-
 }
 
 .input-fields input:focus {
@@ -99,10 +93,15 @@ body {
 
 #results p {
     line-height: 2.5em;
-
 }
 
 #results p span {
     color: #E73C7E;
     font-weight: bolder
+}
+
+#price {
+    color: #E73C7E;
+    font-size: larger;
+    font-weight: bolder;
 }

@@ -14,11 +14,11 @@
     <header>
         <nav>
             <a href={{ url_for('index') }}>La Data Dream Team</a>
-            <a href="travaux/">Travaux segmentation</a>
+            <a href={{ url_for('works') }}>Travaux segmentation</a>
         </nav>
     </header>
     <section>
-        {% block content%} {%endblock%}
+        {% block content%} {% endblock %}
     </section>
     <footer>
         © Tous droits réservés - Cosmo Devs - Ecole IA by Simplon

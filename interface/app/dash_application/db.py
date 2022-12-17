@@ -10,7 +10,6 @@ def create_connection():
     :param db_file: database file
     :return: Connection object or None
     """
-    print()
     conn = None
     try:
         conn = sqlite3.connect(database=database)

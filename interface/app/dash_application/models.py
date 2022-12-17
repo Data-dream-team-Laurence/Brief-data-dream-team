@@ -2,10 +2,7 @@ from sklearn.model_selection import train_test_split
 from sklearn import linear_model
 from sklearn.dummy import DummyRegressor
 from sklearn.metrics import mean_squared_error, r2_score, median_absolute_error
-from sklearn import metrics
 import numpy as np
-
-#todo
 
 def get_results_by_model(model, X, y, X_to_predict):
 
